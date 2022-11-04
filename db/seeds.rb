@@ -6,3 +6,12 @@ if Cuisine.count == 0
         puts "created with #{cuisine} cuisine"
     end
 end
+
+food_preps = ["Certified GF Kitchen", "Traces of Gluten in food", "Chances of cross-contaminaton"]
+
+if Food_prep.count == 0
+    food_preps.each do |food_prep|
+        Food_prep.create(name: food_prep)
+        puts "created with #{food_prep} food preparation"
+    end
+end

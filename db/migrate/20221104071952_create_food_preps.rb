@@ -1,6 +1,6 @@
-class CreateCuisines < ActiveRecord::Migration[7.0]
+class CreateFoodPreps < ActiveRecord::Migration[7.0]
   def change
-    create_table :cuisines do |t|
+    create_table :food_preps do |t|
       t.string :name
       # t.references :name, null: false, foreign_key: true
 
