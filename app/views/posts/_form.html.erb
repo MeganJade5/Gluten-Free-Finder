@@ -1,0 +1,67 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :restaurant_name, style: "display: block" %>
+    <%= form.text_field :restaurant_name %>
+  </div>
+
+  <div>
+    <%= form.label :street_number, style: "display: block" %>
+    <%= form.text_field :street_number %>
+  </div>
+
+  <div>
+    <%= form.label :street_name, style: "display: block" %>
+    <%= form.text_field :street_name %>
+  </div>
+
+  <div>
+    <%= form.label :suburb, style: "display: block" %>
+    <%= form.text_field :suburb %>
+  </div>
+
+  <div>
+    <%= form.label :postcode, style: "display: block" %>
+    <%= form.number_field :postcode %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.rich_text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :cuisine_id, style: "display: block" %>
+    <%= form.text_field :cuisine_id %>
+  </div>
+
+  <div>
+    <%= form.label :food_prep_id, style: "display: block" %>
+    <%= form.text_field :food_prep_id %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :live_status, style: "display: block" %>
+    <%= form.check_box :live_status %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
