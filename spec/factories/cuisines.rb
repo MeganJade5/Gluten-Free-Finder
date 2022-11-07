@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :cuisine do
-    name { nil }
+    name { "MyString" }
   end
 end
