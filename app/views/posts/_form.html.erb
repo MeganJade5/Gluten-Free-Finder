@@ -43,12 +43,12 @@
 
   <div>
     <%= form.label :cuisine_id, style: "display: block" %>
-    <%= form.text_field :cuisine_id %>
+    <%= form.select :cuisine_id, @cuisines.map {|c| [c.name, c.id]} %>
   </div>
 
   <div>
     <%= form.label :food_prep_id, style: "display: block" %>
-    <%= form.text_field :food_prep_id %>
+    <%= form.select :food_prep_id, @food_preps.map {|fp| [fp.name, fp.id]}%>
   </div>
 
   <div>
