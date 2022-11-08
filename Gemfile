@@ -68,3 +68,5 @@ end
 
 
 gem "devise", "~> 4.8"
+
+gem "webpacker", "~> 5.x"
