@@ -37,11 +37,6 @@
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.rich_text_area :description %>
-  </div>
-
-  <div>
     <%= form.label :cuisine_id, style: "display: block" %>
     <%= form.select :cuisine_id, @cuisines.map {|c| [c.name, c.id]} %>
   </div>
@@ -52,13 +47,8 @@
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.label :live_status, style: "display: block" %>
-    <%= form.check_box :live_status %>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.rich_text_area :description %>
   </div>
 
   <div>
