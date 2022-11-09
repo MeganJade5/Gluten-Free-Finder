@@ -1,7 +1,13 @@
-<% if user_signed_in?%>
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<%= link_to "Create New Post", new_post_path %>
-<% else %>
-<%= link_to "Login", new_user_session_path %>
-<%= link_to "Sign Up", new_user_registration_path %>
-<% end %>
+<%= link_to "Gluten Free Finder", root_path %>
+<%# for admin dashboard! %>
+<%= link_to "Posts (Admin Dashboard)", posts_path %>
+
+<span style="float: right">
+    <% if user_signed_in?%>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    <%= link_to "Create New Post", new_post_path %>
+    <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+    <% end %>
+</span>

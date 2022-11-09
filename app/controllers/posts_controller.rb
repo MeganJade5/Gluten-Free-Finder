@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :set_form_vars, only: %i[ new edit]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   # GET /posts or /posts.json
   def index
@@ -69,6 +71,14 @@ class PostsController < ApplicationController
     def set_form_vars
       @cuisines = Cuisine.all
       @food_preps = FoodPrep.all
+    end
+
+    # only authorized users can change posts
+    def authorize_user
+      if @listing.user_id != current_user.id
+        flash[:alert] = "we are unable to proceed with that action, please sign in"
+        redirect_to posts_path
+      end
     end
 
     # Only allow a list of trusted parameters through.
