@@ -73,6 +73,14 @@ class PostsController < ApplicationController
       @food_preps = FoodPrep.all
     end
 
+    # only authorized users can change posts
+    def authorize_user
+      if @listing.user_id != current_user.id
+        flash[:alert] = "we are unable to proceed with that action, please sign in"
+        redirect_to posts_path
+      end
+    end
+
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:restaurant_name, :street_number, :street_name, :suburb, :postcode, :description, :cuisine_id, :food_prep_id, :user_id, :live_status)
