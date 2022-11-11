@@ -31,17 +31,21 @@
 
   <p>
     <strong>Cuisine:</strong>
-    <%= post.cuisine_id %>
+    <%= post.cuisine.name %>
   </p>
 
   <p>
     <strong>Food prep:</strong>
-    <%= post.food_prep_id %>
+    <%= post.food_prep.name %>
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
+    <strong>User Restaurant Owner:</strong>
+    <% if post.user.restaurant_owner_accepted == false %>
+      <%= "not a restaurant owner" %>
+    <% else %>
+      <%= "is a restaurant owner" %>
+    <% end %>
   </p>
 
   <p>
