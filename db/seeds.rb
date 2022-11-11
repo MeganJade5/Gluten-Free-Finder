@@ -15,3 +15,8 @@ if FoodPrep.count == 0
         puts "created with #{food_prep} food preparation"
     end
 end
+
+User.first_or_create(email: 'admin@glutenfreefinder.com',
+    password: 'admin1234',
+    password_confirmation: 'admin1234',
+    role: User.roles[:admin])
