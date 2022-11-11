@@ -1,4 +1,24 @@
 <div id="<%= dom_id post %>">
+
+  <%# <p>
+    <% post.images.each do |image| %>
+      <%# <%= link_to image_tag(post.image), image %> %>
+    <%# <% end %> %>
+  <%# </p> %> %>
+
+  <%# <div>
+    <%# user attaching image and if there is none attached %>
+    <%# <% if post.images.attached? %> %>
+        <%# <%= image_tag post.images, alt: post.restaurant_name %> %>
+    <%# <% else %> %>
+      <%# <%=image_tag('questionmark.jpg')%> %>
+    <%# <% end %> %>
+  <%# </div> %> %>
+
+  <div>
+    <%= image_tag post.image, alt: post.restaurant_name%>
+  </div>
+
   <p>
     <strong>Restaurant name:</strong>
     <%= post.restaurant_name %>

@@ -47,8 +47,13 @@
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :description %>
     <%= form.rich_text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :image %>
+    <%= form.file_field :image, accept: "images/png, images/jpg, images/jpeg" %>
   </div>
 
   <div>
