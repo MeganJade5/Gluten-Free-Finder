@@ -75,7 +75,7 @@ class PostsController < ApplicationController
 
     # only authorized users can change posts
     def authorize_user
-      if @listing.user_id != current_user.id
+      if @post.user_id != current_user.id
         flash[:alert] = "we are unable to proceed with that action, please sign in"
         redirect_to posts_path
       end
