@@ -4,9 +4,11 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+    <% if post.live_status == true %>
+        <%= render post %>
+        <p>
+          <%= link_to "Show this post", post %>
+        </p>
+    <% end %>
   <% end %>
 </div>

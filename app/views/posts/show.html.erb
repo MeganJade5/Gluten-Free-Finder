@@ -4,6 +4,7 @@
 
 <div>
 <% if current_user && current_user.admin? %>
+    <%# <%= button_to "Approve", %> %>
     <%= link_to "Edit this post", edit_post_path(@post) %> |
     <%= button_to "Destroy this post", @post, method: :delete %>
 <% end %>

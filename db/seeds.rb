@@ -17,6 +17,6 @@ if FoodPrep.count == 0
 end
 
 User.first_or_create(email: 'admin@glutenfreefinder.com',
-    password: 'admin1234',
-    password_confirmation: 'admin1234',
+    password: 'admin123',
+    password_confirmation: 'admin123',
     role: User.roles[:admin])

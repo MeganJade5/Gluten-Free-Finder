@@ -1,1 +1,12 @@
-<h1> Admin Dashboard </h1>
+<h1>Posts</h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <% if post.live_status == false %>
+        <%= render post %>
+        <p>
+          <%= link_to "Show this post", post %>
+        </p>
+    <% end %>
+  <% end %>
+</div>
